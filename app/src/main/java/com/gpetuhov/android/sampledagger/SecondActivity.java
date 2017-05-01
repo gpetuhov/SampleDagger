@@ -19,6 +19,9 @@ public class SecondActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
 
+        // Here SecondComponent instance is created
+        // and injects TextFiller instance into SecondActivity.
+        // There will be only one instance of TextFiller.
         SampleDaggerApp.getSecondComponent().inject(this);
 
         textView = (TextView) findViewById(R.id.textview);
@@ -29,6 +32,7 @@ public class SecondActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
 
+        // Here SecondComponent instance is cleared.
         SampleDaggerApp.clearSecondComponent();
     }
 }

@@ -8,9 +8,13 @@ import javax.inject.Singleton;
 
 import dagger.Component;
 
+// AppComponent injects instances from AppModule into MainActivity.
+// And also AppComponent is the ancestor of SecondComponent subcomponent.
 @Component(modules = AppModule.class)
 @Singleton
 public interface AppComponent {
+    // This method declaration tells Dagger that AppComponent is the ancestor or SecondComponent,
+    // which uses SecondModule.
     SecondComponent plusSecondComponent(SecondModule secondModule);
 
     void inject(MainActivity activity);

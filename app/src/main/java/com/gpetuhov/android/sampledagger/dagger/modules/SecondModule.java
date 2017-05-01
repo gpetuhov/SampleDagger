@@ -7,6 +7,8 @@ import com.gpetuhov.android.sampledagger.utils.UtilsPref;
 import dagger.Module;
 import dagger.Provides;
 
+// SecondModule has access to UtilsPref instance to provide TextFiller instance,
+// since SecondComponent is subcomponent of Appcomponent.
 @Module
 public class SecondModule {
 

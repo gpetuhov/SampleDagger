@@ -1,6 +1,6 @@
 package com.gpetuhov.android.sampledagger.utils;
 
-
+// TextFiller uses UtilsPref instance
 public class TextFiller {
     private UtilsPref utilsPref;
 

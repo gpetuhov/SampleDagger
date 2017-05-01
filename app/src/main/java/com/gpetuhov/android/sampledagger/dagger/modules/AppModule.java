@@ -12,6 +12,8 @@ import javax.inject.Singleton;
 import dagger.Module;
 import dagger.Provides;
 
+// AppModule provides Context, SharedPreferences and UtilsPrefs instances
+// (only one instance of each class).
 @Module
 public class AppModule {
     Context context;
