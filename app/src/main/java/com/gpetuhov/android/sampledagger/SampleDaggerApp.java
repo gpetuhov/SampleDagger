@@ -4,11 +4,14 @@ import android.app.Application;
 
 import com.gpetuhov.android.sampledagger.dagger.components.AppComponent;
 import com.gpetuhov.android.sampledagger.dagger.components.DaggerAppComponent;
+import com.gpetuhov.android.sampledagger.dagger.components.SecondComponent;
 import com.gpetuhov.android.sampledagger.dagger.modules.AppModule;
+import com.gpetuhov.android.sampledagger.dagger.modules.SecondModule;
 
 public class SampleDaggerApp extends Application {
 
     private static AppComponent appComponent;
+    private static SecondComponent secondComponent;
 
     @Override
     public void onCreate() {
@@ -23,5 +26,16 @@ public class SampleDaggerApp extends Application {
 
     public static AppComponent getAppComponent() {
         return appComponent;
+    }
+
+    public static SecondComponent getSecondComponent() {
+        if (null == secondComponent) {
+            secondComponent = appComponent.plusSecondComponent(new SecondModule());
+        }
+        return secondComponent;
+    }
+
+    public static void clearSecondComponent() {
+        secondComponent = null;
     }
 }
