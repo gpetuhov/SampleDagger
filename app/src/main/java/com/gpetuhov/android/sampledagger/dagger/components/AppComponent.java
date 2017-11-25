@@ -8,6 +8,8 @@ import javax.inject.Singleton;
 
 import dagger.Component;
 
+// Module dependency graph is built in COMPONENTS (components describe dependencies between modules) !!!
+
 // AppComponent injects instances from AppModule into MainActivity.
 // And also AppComponent is the ancestor of SecondComponent subcomponent.
 @Component(modules = AppModule.class)
