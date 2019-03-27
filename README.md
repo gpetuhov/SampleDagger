@@ -1,3 +1,3 @@
 # SampleDagger
 
-Dagger 2 with scopes in Android.
+Using Dagger 2 with Scopes and Subcomponents in Android.
